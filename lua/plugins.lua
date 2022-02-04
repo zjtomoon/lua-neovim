@@ -70,5 +70,11 @@ return require('packer').startup(function(use)
     requires = {{'nvim-lua/plenary.nvim'}}
   }
   
-end)
+end,
+  config = {
+    git = {
+       default_url_format = "https://hub.fastgit.org/%s"
+    }
+  }
+)
 
