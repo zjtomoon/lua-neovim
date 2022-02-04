@@ -108,7 +108,7 @@ lua require('plugin-config/nvim-autopairs')
 lua require('plugin-config/surround')
 lua require('plugin-config/comment')
 lua require('plugin-config/nvim-colorizer')
-lua require('plugin-config/which-key.lua')
+lua require('plugin-config/which-key')
 
 "lsp config
 lua require('lsp/setup')
