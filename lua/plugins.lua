@@ -22,9 +22,6 @@ return require('packer').startup(
       run = ':TSUpdate'
     }
 
-    -- Comment
-    use 'numToStr/Comment.nvim'
-
     -- nvim-autopairs
     use 'windwp/nvim-autopairs'
     -------------------------- lsp -------------------------------------------
@@ -43,9 +40,7 @@ return require('packer').startup(
     use 'rafamadriz/friendly-snippets'
     -- lspkind
     use 'onsails/lspkind-nvim'
-    -- use 'github/copilot.vim'
 
-    use 'simrat39/rust-tools.nvim'
     --------------------------- colorscheme ------------------------------------
 
     -- gruvbox
@@ -62,7 +57,7 @@ return require('packer').startup(
     ------------------------------------
     --
     -- which-key
-    -- use 'folke/which-key.nvim'
+    use 'folke/which-key.nvim'
 
     -- telescope
     use 'nvim-lua/popup.nvim'
@@ -71,6 +66,12 @@ return require('packer').startup(
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/plenary.nvim'}}
     }
+
+    -- surround
+    use "blackCauldron7/surround.nvim"
+
+    -- nvim-coloizer
+    use 'norcalli/nvim-colorizer.lua'
     
     end,
         config = {
