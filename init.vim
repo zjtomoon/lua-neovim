@@ -95,6 +95,10 @@ lua require('basic')
 " Packer 插件管理
 lua require('plugins')
 
+"主题设置
+set background=dark " or light if you want light mode
+colorscheme onedark
+
 "插件配置
 lua require('plugin-config/nvim-tree')
 lua require('plugin-config/bufferline')
