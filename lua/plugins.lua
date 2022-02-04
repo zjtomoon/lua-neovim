@@ -1,15 +1,3 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  --fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})	--默认地址
-  fn.system(
-    {"git", "clone", "--depth", "1", "https://codechina.csdn.net/mirrors/wbthomason/packer.nvim.git", install_path}
-  ) --csdn加速镜像
-  vim.cmd "packadd packer.nvim"
-end
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -53,7 +41,9 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   -- lspkind
   use 'onsails/lspkind-nvim'
+  -- use 'github/copilot.vim'
 
+  use 'simrat39/rust-tools.nvim'
   --------------------------- colorscheme ------------------------------------
 
   -- gruvbox
@@ -78,20 +68,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/plenary.nvim'}}
-  }    
-end,
-  config = {
-  max_jobs = 16,
-  git = {
-      --修改这里可以切换加速的节点
-        default_url_format = "https://github.com.cnpmjs.org/%s"
-    },
-    display = {
-      open_fn = function()
-        return require("packer.util").float({border = "single"})
-      end
-    }
   }
-)
-
+  
+end)
 
