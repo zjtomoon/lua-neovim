@@ -78,20 +78,20 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/plenary.nvim'}}
-  }
-    
+  }    
+end,
   config = {
   max_jobs = 16,
   git = {
       --修改这里可以切换加速的节点
         default_url_format = "https://github.com.cnpmjs.org/%s"
     },
-  display = {
-     open_fn = function()
-       return require("packer.util").float({border = "single"})
-    end
+    display = {
+      open_fn = function()
+        return require("packer.util").float({border = "single"})
+      end
+    }
   }
-}
-end)
+)
 
 
