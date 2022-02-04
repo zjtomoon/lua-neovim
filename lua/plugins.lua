@@ -72,6 +72,9 @@ return require('packer').startup(
 
     -- nvim-coloizer
     use 'norcalli/nvim-colorizer.lua'
+
+     -- Comment
+    use 'numToStr/Comment.nvim'
     
     end,
         config = {
