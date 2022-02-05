@@ -102,7 +102,6 @@ colorscheme onedark
 "插件配置
 lua require('plugin-config/nvim-tree')
 lua require('plugin-config/bufferline')
-lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/telescope')
 lua require('plugin-config/nvim-autopairs')
 lua require('plugin-config/surround')

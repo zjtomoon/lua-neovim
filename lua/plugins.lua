@@ -16,12 +16,6 @@ return require('packer').startup(
       'akinsho/bufferline.nvim',
       requires = 'kyazdani42/nvim-web-devicons'
     }
-    -- treesitter
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-    }
-
     -- nvim-autopairs
     use 'windwp/nvim-autopairs'
     -------------------------- lsp -------------------------------------------
