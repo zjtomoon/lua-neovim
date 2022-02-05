@@ -85,8 +85,7 @@ map <LEADER><right> :vertical resize+5<CR>
 noremap = nzz
 noremap - Nzz
 nmap <LEADER>t :sp<CR> :term<CR>
-nmap tt :NERDTree<CR>
-nmap te :CocCommand explorer<CR>
+nmap tt :NvimTreeOpen<CR>
 nmap bc <C-o>
 
 " lua配置
