@@ -79,6 +79,8 @@ return require('packer').startup(
     use 'vim-airline/vim-airline'
     use 'powerline/powerline'
     use 'luochen1990/rainbow'
+    --vim-go
+    use 'fatih/vim-go'
 
 
     end,
