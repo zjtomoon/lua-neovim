@@ -69,7 +69,18 @@ return require('packer').startup(
 
      -- Comment
     use 'numToStr/Comment.nvim'
-    
+
+    -- rust-tools
+    use 'simrat39/rust-tools.nvim'
+
+    --vim-startify
+    use 'mhinz/vim-startify'
+
+    use 'vim-airline/vim-airline'
+    use 'powerline/powerline'
+    use 'luochen1990/rainbow'
+
+
     end,
         config = {
       max_jobs = 16,

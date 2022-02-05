@@ -54,6 +54,42 @@ set scrolloff=5
  let g:terminal_color_12 = '#CAA9FA'
  let g:terminal_color_13 = '#FF92D0'
  let g:terminal_color_14 = '#9AEDFE'
+
+"rainbow brackets
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+noremap R :call CompileRun()<CR>
+function CompileRun()
+		exec "w"
+		if &filetype == 'c'
+			exec "!g++ % -o %<"
+			:sp
+			:term ./%<
+		elseif &filetype == 'cpp'
+			exec "!g++ % -wall -o %<"
+			:sp
+			:term ./%<
+		elseif &filetype == 'sh'
+			:!time bash %
+		elseif &filetype == 'go'
+			set splitbelow
+			:sp
+			:term go run .
+		elseif &filetype == 'rust'
+			set splitbelow
+			:sp
+			:term cargo run .
+    elseif &filetype == 'typescript'
+      set splitbelow
+      :sp 
+      :term ts-node .
+    elseif &filetype == 'lua'
+      set splitbelow
+      :sp 
+      :term lua .
+		endif
+endfunction
+
 "
 "===
 "=== keymap
@@ -107,6 +143,7 @@ lua require('plugin-config/surround')
 lua require('plugin-config/comment')
 lua require('plugin-config/nvim-colorizer')
 lua require('plugin-config/which-key')
+lua require('plugin-config/rust-tools')
 
 "lsp config
 lua require('lsp/setup')
