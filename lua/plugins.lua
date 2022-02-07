@@ -89,7 +89,7 @@ return require('packer').startup(
       git = {
         --修改这里可以切换加速的节点
         --default_url_format = "https://github.com.cnpmjs.org/%s"
-        default_url_format = "https://gitcode.net/mirrors/%s"
+        --default_url_format = "https://gitcode.net/mirrors/%s"
       },
       display = {
         open_fn = function()
