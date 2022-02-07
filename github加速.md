@@ -11,14 +11,18 @@ https://gitcode.net/mirrors/
 ## 方法二：修改~/.gitconfig
 
 ```bash
-[url "git@git.zhlh6.cn:"]      insteadof=git@github.com:[url "https://github.com.cnpmjs.org/"]      insteadof=https://github.com/
+[url "git@git.zhlh6.cn:"]      
+insteadof=git@github.com:
+[url "https://github.com.cnpmjs.org/"]      
+insteadof=https://github.com/
 ```
 
 ## 方法三：使用fastgithub后台服务
 
 ```bash
 mkdir download # ~/downloadcd ~/download
-wget https://github.com/zjtomoon/vim-config/releases/download/v1.0.0/linux-x64.zipunzip linux-x64.zip
+wget https://github.com/zjtomoon/vim-config/releases/download/v1.0.0/linux-x64.zip
+unzip linux-x64.zip
 #macos
 wget https://github.com/zjtomoon/vim-config/releases/download/v1.0.0/osx-x64.zip
 #windows
@@ -83,5 +87,6 @@ sudo ./FastGithub start
 ```bash
 # centos
 sudo yum install libicu libicu-devel libunwind
-#ubuntusudo apt-get install libicu-dev
+#ubuntu
+sudo apt-get install libicu-dev
 ```
