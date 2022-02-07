@@ -87,6 +87,10 @@ function CompileRun()
       set splitbelow
       :sp 
       :term lua %
+    elseif &filetype == 'python'
+      set splitbelow
+      :sp
+      :term python %
 		endif
 endfunction
 
