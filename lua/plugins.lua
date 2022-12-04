@@ -62,7 +62,7 @@ return require('packer').startup(
     }
 
     -- surround
-    use "blackCauldron7/surround.nvim"
+    use "ur4ltz/surround.nvim"
 
     -- nvim-coloizer
     use 'norcalli/nvim-colorizer.lua'
