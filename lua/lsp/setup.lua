@@ -1,5 +1,6 @@
--- local lsp_installer = require "nvim-lsp-installer"
-
+local servers = {
+	"rust_analyzer",
+}
 require("mason").setup()
 
 require("mason-lspconfig").setup()
@@ -37,8 +38,6 @@ null_ls.setup({
 	}
 })
 
-local null_ls = require("null-ls");
-
 require("mason-null-ls").setup()
 
 require 'mason-null-ls'.setup_handlers({
@@ -50,6 +49,27 @@ require 'mason-null-ls'.setup_handlers({
 	end,
 })
 
+local lspconfig = require('lspconfig')
+local default_on_attach = function(_,bufnr)
+	local function buf_set_keymap(...)
+		vim.api.nvim_buf_set_keymap(bufnr,...)
+	end
+	require('keybindings').maplsp(buf_set_keymap)
+	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+end
+
+for _,server in pairs(servers) do
+	lspconfig[server].setup({
+		on_attach = default_on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		}
+	})
+end
+
+
+-- old config with lsp-installer
+-- local lsp_installer = require "nvim-lsp-installer"
 -- 安装列表
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 -- { key: 语言 value: 配置文件 }
@@ -63,7 +83,7 @@ require 'mason-null-ls'.setup_handlers({
 --   -- jsonls = {},
 --   -- tsserver = {}
 -- }
--- -- 自动安装 LanguageServers
+-- 自动安装 LanguageServers
 -- for name, _ in pairs(servers) do
 --   local server_is_found, server = lsp_installer.get_server(name)
 --   if server_is_found then
@@ -73,8 +93,8 @@ require 'mason-null-ls'.setup_handlers({
 --     end
 --   end
 -- end
---
---
+
+
 -- lsp_installer.on_server_ready(function(server)
 --   local opts = servers[server.name]
 --   if opts then
@@ -87,7 +107,7 @@ require 'mason-null-ls'.setup_handlers({
 --     opts.flags = {
 --       debounce_text_changes = 150,
 --     }
---
+
 --     if server.name == "rust_analyzer" then
 --       -- Initialize the LSP via rust-tools instead
 --       require("rust-tools").setup {
@@ -104,5 +124,5 @@ require 'mason-null-ls'.setup_handlers({
 --     end
 --   end
 -- end)
---
+-- --
 
