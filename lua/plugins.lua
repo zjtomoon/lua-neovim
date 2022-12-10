@@ -21,7 +21,23 @@ return require('packer').startup(
     -------------------------- lsp -------------------------------------------
 
     -- lspconfig
-    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+    -- use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+
+    use {'neovim/nvim-lspconfig'}
+    -- Mason
+    use { "williamboman/mason.nvim" }
+
+    -- Null-ls
+    use { "jose-elias-alvarez/null-ls.nvim" }
+
+    -- Require ["williamboman/mason.nvim"]
+    -- Bridge mason/lspconfig
+    use { "williamboman/mason-lspconfig.nvim" }
+
+    -- Require ["williamboman/mason.nvim"]
+    -- Bridge mason/null-ls
+    use { "jayp0521/mason-null-ls.nvim" }
+
     -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
